@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Formular</title>
+</head>
+<body>
+
+    <header>
+        <h1>Kontakt- und Anmeldeformular</h1>
+        <p>Bitte füllen Sie das folgende Formular aus.</p>
+    </header>
+
+    <main>
+        <!-- Folie 4: mailto-Formular mit method="post" und enctype="text/plain" -->
+        <form action="mailto:k.mlakic05@gmail.com?subject=WMC%20Formular%20Abgabe" method="post" enctype="text/plain">
+
+            <!-- 1. Texteingabe (Bonus: required) -->
+            <p>
+                <label for="name">Name:*</label><br>
+                <input type="text" id="name" name="Name" required placeholder="Vor- und Nachname">
+            </p>
+
+            <!-- Bonus: Pattern-Matching (z.B. österreichische PLZ mit genau 4 Ziffern) -->
+            <p>
+                <label for="plz">Postleitzahl (4 Ziffern):*</label><br>
+                <input type="text" id="plz" name="PLZ" pattern="[0-9]{4}" title="Bitte genau 4 Ziffern eingeben" required placeholder="z. B. 1050">
+            </p>
+
+            <!-- 2. Radiobutton -->
+            <p>
+                Geschlecht / Anrede:<br>
+                <input type="radio" id="weiblich" name="Anrede" value="Weiblich" required>
+                <label for="weiblich">Weiblich</label>
+
+                <input type="radio" id="maennlich" name="Anrede" value="Maennlich">
+                <label for="maennlich">Männlich</label>
+
+                <input type="radio" id="divers" name="Anrede" value="Divers">
+                <label for="divers">Divers</label>
+            </p>
+
+            <!-- 3. Checkbox -->
+            <p>
+                Interessen (Mehrfachnennung möglich):<br>
+                <input type="checkbox" id="html" name="Interesse_HTML" value="Ja">
+                <label for="html">HTML &amp; CSS</label><br>
+
+                <input type="checkbox" id="java" name="Interesse_Java" value="Ja">
+                <label for="java">Java Programmierung</label><br>
+
+                <input type="checkbox" id="netzwerk" name="Interesse_Netzwerk" value="Ja">
+                <label for="netzwerk">Netzwerktechnik</label>
+            </p>
+
+            <!-- 4. Dropdown (Einfachauswahl) -->
+            <p>
+                <label for="klasse">Klasse auswählen:</label><br>
+                <select id="klasse" name="Klasse">
+                    <option value="3CAIF">3CAIF</option>
+                    <option value="4CAIF">4CAIF</option>
+                    <option value="5CAIF">5CAIF</option>
+                </select>
+            </p>
+
+            <!-- 5. Mehrfachauswahl (Dropdown mit multiple) -->
+            <p>
+                <label for="tools">Verwendete Werkzeuge (Mehrfachauswahl mit Strg halten):</label><br>
+                <select id="tools" name="Tools" multiple size="4">
+                    <option value="VSCode">Visual Studio Code</option>
+                    <option value="Git">Git / GitHub</option>
+                    <option value="BlueJ">BlueJ</option>
+                    <option value="Browser">Webbrowser / Live Server</option>
+                </select>
+            </p>
+
+            <!-- 6. Weiteres Eingabefeld (z. B. Lieblingsfarbe aus Folie 5) -->
+            <p>
+                <label for="farbe">Lieblingsfarbe auswählen:</label><br>
+                <input type="color" id="farbe" name="Lieblingsfarbe" value="#1a365d">
+            </p>
+
+            <!-- 7. Mehrzeiliges Textfeld -->
+            <p>
+                <label for="nachricht">Ihre Nachricht / Anmerkungen:*</label><br>
+                <textarea id="nachricht" name="Nachricht" rows="4" cols="40" required placeholder="Text hier eingeben..."></textarea>
+            </p>
+
+            <!-- Absenden & Zurücksetzen Buttons -->
+            <p>
+                <input type="submit" value="Formular absenden">
+                <input type="reset" value="Zurücksetzen">
+            </p>
+
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Katarina Mlakic &ndash; 3CAIF</p>
+    </footer>
+
+</body>
+</html>
